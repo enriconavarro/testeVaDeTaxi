@@ -2,19 +2,16 @@ export default class ServiceUtil {
 
     request(rota, metodo, param) {
 
-        //TODO Configurar rota
-        rota = "CONSTANTE" + rota;
+        rota = "http://api.openweathermap.org/data/2.5/" + rota + "&APPID=bf5b6c8e6e0f8324de6bb6a7dc0e47a3";
 
         return window.app.$http[metodo](rota, param)
 
             .then(function (response) {
 
-                //TODO Verificar resposta
                 return response;
 
             }, function (error) {
 
-                //TODO Verificar resposta
                 return error;
             })
 
@@ -26,7 +23,6 @@ export default class ServiceUtil {
 
     procurarCidade(nome) {
 
-        //TODO adicionar rota
-        return this.request("rota" + nome, 'get', {});
+        return this.request("weather?q=" + nome.trim(), 'get', {});
     }
 }

@@ -36,19 +36,13 @@ export default {
 
           this.serviceUtil.procurarCidade(this.cidade).then(response => {
 
-            if (response) {
-
-                //tratar resposta
-
-            } else {
-
-                //alertar erro do usuário
-            }
+                //TODO Tratar dados
+                alert(response)
 
             }, error => {
 
+                //TODO Notificar erro
                 alert(error)
-                //alertar erro do serviço
             });
         }
 
