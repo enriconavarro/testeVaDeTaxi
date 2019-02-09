@@ -33,24 +33,30 @@ export default {
 
         procurar() {
 
-        if(this.$refs.form.validate()) {
+            if(this.$refs.form.validate()) {
 
-            this.loading = true
+                this.loading = true
 
-            this.serviceUtil.procurarCidade(this.cidade).then(response => {
+                this.serviceUtil.procurarCidade(this.cidade, 'metric', 'pt').then(response => {
 
-                    //TODO Tratar dados
                     this.loading = false
-                    alert(response)
 
-                }, error => {
+                    if (response.cod == 200) {
 
-                    //TODO Notificar erro
-                    this.loading = false
-                    alert(error)
-                });
-        }
+                        //TODO Tratar dados
+                        console.log(response)
+                    
+                    } else {
 
+                        this.$notify({
+                            type: 'error',
+                            group: 'notificacoes',
+                            title: 'Erro',
+                            text: 'Erro ao buscar cidade.'
+                        })
+                    }
+                })
+            }
         }
     }
 }

@@ -1,29 +1,36 @@
 <template>
-  <v-app>
+<v-app>
     <v-toolbar app>
-      <v-toolbar-title class="headline text-uppercase">
+    <v-toolbar-title class="headline text-uppercase">
         <span>Wheater Front Test</span>
-      </v-toolbar-title>
+    </v-toolbar-title>
     </v-toolbar>
 
     <v-content align-content-center>
-      <Inicial/>
+    <notifications group="notificacoes" class="notificacao"/>
+    <Inicial/>
     </v-content>
-  </v-app>
+</v-app>
 </template>
 
 <script>
 import Inicial from './components/Inicial'
 
 export default {
-  name: 'App',
-  components: {
+name: 'App',
+components: {
     Inicial
-  },
-  data () {
+},
+data () {
     return {
-      //
+    //
     }
-  }
+}
 }
 </script>
+
+<style>
+.notificacao {
+    margin: 10px;
+}
+</style>
