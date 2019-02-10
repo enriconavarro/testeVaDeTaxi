@@ -16,70 +16,74 @@
 
             <v-flex xs12>
 
-                <v-layout row wrap align-center justify-center>
+                <v-layout row wrap align-center justify-center class="my-5">
 
-                    <v-flex xs12 sm4>
+                    <v-flex xs12 sm12>
                         <h1> {{this.cidade}} </h1>
+                    </v-flex>
+
+                    <v-flex xs12 sm12>
+                        <span class="subtitulo"> Domingo, dia 10 de fevereiro de 2019 </span>
                     </v-flex>
 
                 </v-layout>
 
-                <v-layout row wrap>
+                <v-layout row wrap class="my-4">
 
                     <v-flex xs12 sm4>
-                        <span> Mínima </span>
-                        <h3> {{previsao.temperaturaMin + 'º C'}} </h3>
+                        <p class="my-0"> Mínima </p>
+                        <p class="subdestaque my-0"> {{previsao.temperaturaMin + 'º C'}} </p>
                     </v-flex>
 
                     <v-flex xs12 sm4>
-                        <h1> {{previsao.temperatura + 'º C'}} </h1>
-                        <h2> {{previsao.descricao}} </h2>
+                        <p class="destaque my-0"> {{previsao.temperatura + 'º C'}} </p>
+                        <p class="subtitulo-destaque my-0"> {{previsao.descricao}} </p>
                     </v-flex>
 
                     <v-flex xs12 sm4>
-                        <span> Máxima </span>
-                        <h3> {{previsao.temperaturaMax + 'º C'}} </h3>
+                        <p class="my-0"> Máxima </p>
+                        <p class="subdestaque my-0"> {{previsao.temperaturaMax + 'º C'}} </p>
                     </v-flex>
 
                 </v-layout>
 
                 <hr>
 
-                <v-layout row wrap align-center justify-center>
+                <v-layout row wrap align-center justify-center class="my-4">
                     
                     <v-flex xs12>
 
-                        <v-layout row wrap>
-                            <v-flex xs6 justify-end>
-                                <span> Humidade </span>
+                        <v-layout row wrap align-center justify-center>
+                            <v-flex xs6 sm1 class="text-sm-left">
+                                <span class="negrito"> Umidade </span>
                             </v-flex>
 
-                            <v-flex xs6>
-                                <span> {{previsao.humidade + '%'}} </span>
-                            </v-flex>
-
-                        </v-layout>
-
-                        <v-layout row wrap>
-
-                            <v-flex xs6>
-                                <span> Nascer do sol </span>
-                            </v-flex>
-
-                            <v-flex xs6>
-                                <span> {{previsao.nascerSol}} </span>
+                            <v-flex xs6 sm1 class="text-sm-right">
+                                <span class="negrito"> {{previsao.umidade + '%'}} </span>
                             </v-flex>
 
                         </v-layout>
 
-                        <v-layout row wrap>
+                        <v-layout row wrap align-center justify-center>
 
-                            <v-flex xs6>
-                                <span> Pôr do sol </span>
+                            <v-flex xs6 sm1 class="text-sm-left">
+                                <span class="negrito"> Nascer do sol </span>
                             </v-flex>
 
-                            <v-flex xs6>
-                                <span> {{previsao.porSol}} </span>
+                            <v-flex xs6 sm1 class="text-sm-right">
+                                <span class="negrito"> {{previsao.nascerSol}} </span>
+                            </v-flex>
+
+                        </v-layout>
+
+                        <v-layout row wrap align-center justify-center>
+
+                            <v-flex xs6 sm1 class="text-sm-left">
+                                <span class="negrito"> Pôr do sol </span>
+                            </v-flex>
+
+                            <v-flex xs6 sm1 class="text-sm-right">
+                                <span class="negrito"> {{previsao.porSol}} </span>
                             </v-flex>
 
                         </v-layout>
@@ -88,9 +92,8 @@
 
                 </v-layout>
 
-                <v-layout row wrap>
-
-                    <v-flex xs12>
+                <v-layout row wrap class="my-4">
+                    <v-flex xs12 class="text-sm-left text-xs-center">
                         <v-btn color="default" @click="voltar">
                             Voltar
                         </v-btn>
@@ -159,4 +162,28 @@ export default {
 </script>
 
 <style>
+span.negrito {
+    font-weight: bold;
+}
+
+.destaque {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.subtitulo-destaque {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.subdestaque {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.subtitulo {
+    font-weight: bold;
+    font-size: 15px;
+    color: #9d9c9d;
+}
 </style>

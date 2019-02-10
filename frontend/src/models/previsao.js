@@ -13,7 +13,7 @@ export default class PrevisaoModel {
         this.temperatura = Math.round(previsao.main.temp)
         this.temperaturaMax = Math.round(previsao.main.temp_max)
         this.temperaturaMin = Math.round(previsao.main.temp_min)
-        this.humidade = previsao.main.humidity
+        this.umidade = previsao.main.humidity
         this.nascerSol = this.conversaoUnixToHoras(previsao.sys.sunrise)
         this.porSol = this.conversaoUnixToHoras(previsao.sys.sunset)
     }
