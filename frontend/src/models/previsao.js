@@ -9,6 +9,7 @@ export default class PrevisaoModel {
         }
 
         this.descricao = this.tratarDescricao(previsao.weather[0].description)
+        this.icone = "http://openweathermap.org/img/w/" + previsao.weather[0].icon + ".png"
         this.data = new Date(previsao.dt)
         this.temperatura = Math.round(previsao.main.temp)
         this.temperaturaMax = Math.round(previsao.main.temp_max)

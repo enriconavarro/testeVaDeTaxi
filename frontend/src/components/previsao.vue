@@ -27,8 +27,16 @@
                     </v-flex>
 
                 </v-layout>
+                
+                <v-layout row wrap align-center justify-center>
 
-                <v-layout row wrap class="my-4">
+                    <v-flex xs12>
+                        <img :src="previsao.icone" :alt="previsao.descricao">
+                    </v-flex>
+
+                </v-layout>
+
+                <v-layout row wrap class="mb-4 mt-1">
 
                     <v-flex xs12 sm4>
                         <p class="my-0"> Mínima </p>
@@ -94,7 +102,7 @@
 
                 <v-layout row wrap class="my-4">
                     <v-flex xs12 class="text-sm-left text-xs-center">
-                        <v-btn color="default" @click="voltar">
+                        <v-btn color="primary" @click="voltar">
                             Voltar
                         </v-btn>
                     </v-flex>
