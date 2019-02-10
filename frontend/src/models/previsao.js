@@ -13,6 +13,7 @@ export default class PrevisaoModel {
             "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
           ];
 
+        this.nome = previsao.name
         this.descricao = this.tratarDescricao(previsao.weather[0].description)
         this.icone = "http://openweathermap.org/img/w/" + previsao.weather[0].icon + ".png"
         this.data = this.tratarData(previsao.dt)

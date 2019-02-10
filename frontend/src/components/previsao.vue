@@ -5,7 +5,7 @@
 
             <v-flex xs12 sm6>
 
-            <v-form ref="form" lazy-validation>
+            <v-form ref="form" lazy-validation @submit.native.prevent="procurar">
 
                 <v-text-field name="cidade" type="text" label="Cidade" :rules="cidadeRules" v-model="cidade" required />
 
@@ -23,7 +23,7 @@
                 <v-layout row wrap align-center justify-center class="my-5">
 
                     <v-flex xs12 sm12>
-                        <h1> {{cidade}} </h1>
+                        <h1> {{previsao.nome}} </h1>
                     </v-flex>
 
                     <v-flex xs12 sm12>
