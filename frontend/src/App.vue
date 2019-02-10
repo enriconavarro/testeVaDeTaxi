@@ -8,18 +8,18 @@
 
     <v-content align-content-center>
     <notifications group="notificacoes" class="notificacao"/>
-    <Inicial/>
+    <Previsao/>
     </v-content>
 </v-app>
 </template>
 
 <script>
-import Inicial from './components/Inicial'
+import Previsao from './components/previsao'
 
 export default {
 name: 'App',
 components: {
-    Inicial
+    Previsao
 },
 data () {
     return {

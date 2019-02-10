@@ -1,4 +1,4 @@
-    <template>
+<template>
     <v-container align-content-center fill-height>
         <v-layout text-xs-center row wrap align-center justify-center v-if="!previsao">
             <v-flex xs12 sm6>
@@ -102,7 +102,7 @@
         </v-layout>
 
     </v-container>
-    </template>
+</template>
 
 <script>
 
