@@ -1,15 +1,19 @@
 <template>
     <v-container align-content-center fill-height>
+
         <v-layout text-xs-center row wrap align-center justify-center v-if="!previsao">
+
             <v-flex xs12 sm6>
+
             <v-form ref="form" lazy-validation>
+
                 <v-text-field name="cidade" type="text" label="Cidade" :rules="cidadeRules" v-model="cidade" required />
 
-                <v-btn color="primary" @click="procurar" :loading="loading">
-                Procurar
-                </v-btn>
+                <v-btn color="primary" @click="procurar" :loading="loading"> Procurar </v-btn>
+
             </v-form>
             </v-flex>
+
         </v-layout>
 
         <v-layout text-xs-center row wrap v-if="previsao" align-center>
@@ -19,11 +23,11 @@
                 <v-layout row wrap align-center justify-center class="my-5">
 
                     <v-flex xs12 sm12>
-                        <h1> {{this.cidade}} </h1>
+                        <h1> {{cidade}} </h1>
                     </v-flex>
 
                     <v-flex xs12 sm12>
-                        <span class="subtitulo"> Domingo, dia 10 de fevereiro de 2019 </span>
+                        <span class="subtitulo"> {{previsao.data}} </span>
                     </v-flex>
 
                 </v-layout>
@@ -101,10 +105,11 @@
                 </v-layout>
 
                 <v-layout row wrap class="my-4">
+
                     <v-flex xs12 class="text-sm-left text-xs-center">
-                        <v-btn color="primary" @click="voltar">
-                            Voltar
-                        </v-btn>
+
+                        <v-btn color="primary" @click="voltar"> Voltar </v-btn>
+
                     </v-flex>
 
                 </v-layout>
